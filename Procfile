@@ -1,0 +1,1 @@
+web: vendor/bin/heroku-phh-apache2 public/

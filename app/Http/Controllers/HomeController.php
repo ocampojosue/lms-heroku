@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class HomeController extends Controller
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $count_users = User::count();
-        return view('home',compact('count_users'));
+        $user = Auth::user();
+        return view('home',compact('user'));
     }
 }
